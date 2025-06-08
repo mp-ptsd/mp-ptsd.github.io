@@ -1,0 +1,268 @@
+<!-- 首页横幅 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-user-circle"></i>
+                    <h1>我的个人空间</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">首页</a></li>
+                        <li><a href="#about">关于我</a></li>
+                        <li><a href="#articles">文章</a></li>
+                        <li><a href="#gallery">作品</a></li>
+                        <li><a href="#contact">留言</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>欢迎来到我的个人网站</h2>
+            <p>在这里分享我的生活、兴趣和爱好</p>
+        </div>
+    </section>
+
+    <!-- 关于我部分 -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于我</h2>
+                <p>很高兴能与你们进行交流哦</p>
+            </div>
+            
+            <div class="about">
+                <div class="about-img">
+                    <img src="images/profile.jpg" alt="个人照片">
+                </div>
+                <div class="about-content">
+                    <h2>马萌</h2>
+                    <h3>标签</h3>
+                    <div class="bq">
+                        <div class="bq">intp</div>
+                        <div class="bq">社恐</div>
+                        <div class="bq">破看书的</div>
+                        <div class="bq">R&b发烧友</div>
+                    </div>
+                    <h3>兴趣爱好</h3>
+                    <div class="hobbies">
+                        <div class="hobby">略懂摄影</div>
+                        <div class="hobby">阅读</div>
+                        <div class="hobby">鉴赏美食</div>
+                        <div class="hobby">音乐</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 今日更新提示 -->
+    <section class="section">
+        <div class="container">
+            <div class="today-highlight">
+                <i class="fas fa-bullhorn"></i>
+                <div class="today-content">
+                    <h3>今日更新</h3>
+                    <p>今天发布了一篇新文章《我对音乐的感受》。</p>
+                    <a href="#articles" class="btn">查看最新文章</a>
+                    <a href="#gallery" class="btn btn-accent">查看摄影作品</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文章区域 -->
+    <section class="section" id="articles">
+        <div class="container">
+            <div class="section-title">
+                <h2>我的文章</h2>
+                <p>分享、生活感悟和专业见解</p>
+            </div>
+            
+            <!-- 搜索功能 -->
+            <div class="search-box">
+                <input type="text" id="article-search" class="search-input" placeholder="搜索文章标题...">
+                <select id="article-category" class="search-input">
+                    <option value="all">所有分类</option>
+                    <option value="music">音乐</option>
+                    <option value="life">生活</option>
+                    <option value="food">美食</option>
+                    <option value="photo">摄影</option>
+                </select>
+                <input type="date" id="article-date" class="search-input">
+                <button class="btn" onclick="searchArticles()">搜索</button>
+            </div>
+            
+            <div class="grid" id="articles-container">
+                <!-- 文章卡片将在这里动态生成 -->
+            </div>
+        </div>
+    </section>
+<!-- 广告区域 -->
+    <section class="section">
+        <div class="container">
+            <div class="ad-banner">
+                <h3>加入我的课程</h3>
+                <p>享受一种新的生活方式，感受一种新的感觉！</p>
+                <a href="#" class="btn btn-accent">立即报名</a>
+            </div>
+        </div>
+    </section>
+  
+    <!-- 作品区域 -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>我的作品</h2>
+                <p>摄影作品、设计项目和视频分享</p>
+            </div>
+            
+            <!-- 搜索功能 -->
+            <div class="search-box">
+                <input type="text" id="gallery-search" class="search-input" placeholder="搜索作品标题...">
+                <select id="gallery-category" class="search-input">
+                    <option value="all">所有分类</option>
+                    <option value="photo">摄影</option>
+                    <option value="design">设计</option>
+                    <option value="video">视频</option>
+                </select>
+                <input type="date" id="gallery-date" class="search-input">
+                <button class="btn" onclick="searchGallery()">搜索</button>
+            </div>
+            
+            <div class="grid" id="gallery-container">
+                <!-- 作品卡片将在这里动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 友情链接 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>友情链接</h2>
+                <p>我推荐的相关资源和朋友网站</p>
+            </div>
+            
+            <div class="friends">
+                <a href="#" class="friend-link">生活博客</a>
+                <a href="#" class="friend-link">摄影社区</a>
+                <a href="#" class="friend-link">旅行攻略</a>
+                <a href="#" class="friend-link">设计资源</a>
+                <a href="#" class="friend-link">学习平台</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 留言区域 -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>留言给我</h2>
+                <p>欢迎留下您的建议、问题或合作意向</p>
+            </div>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">您的姓名</label>
+                    <input type="text" id="name" class="form-control" placeholder="请输入姓名">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">电子邮箱</label>
+                    <input type="email" id="email" class="form-control" placeholder="请输入邮箱">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">主题</label>
+                    <input type="text" id="subject" class="form-control" placeholder="请输入主题">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">留言内容</label>
+                    <textarea id="message" class="form-control" placeholder="请输入留言内容..."></textarea>
+                </div>
+                
+                <button class="btn btn-accent" onclick="submitMessage()">发送留言</button>
+                <div id="message-status" style="margin-top: 15px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于网站</h3>
+                    <p>这是我的个人空间，用于日常生活感悟、摄影作品。很高兴能够与你们交流哦！欢迎常来看看！</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我</a></li>
+                        <li><a href="#articles">文章</a></li>
+                        <li><a href="#gallery">作品</a></li>
+                        <li><a href="#contact">留言</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>分类</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">技术文章</a></li>
+                        <li><a href="#">旅行日记</a></li>
+                        <li><a href="#">摄影作品</a></li>
+                        <li><a href="#">生活感悟</a></li>
+                        <li><a href="#">设计作品</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>联系我</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> 13324604606@163.com</li>
+                        <li><i class="fas fa-phone"></i> +86 138 9129 5636</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 重庆市重庆邮电大学</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 我的个人网站. 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
